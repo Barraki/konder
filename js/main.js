@@ -14,37 +14,42 @@ $('input[name="phone"]').mask('+7 (999) 999 99-99');
 $('input[name="phone"]').click(function () {
 	$(this).value() = "+7 ("
 	console.log($('input[name="phone"]').value());
-	
+
 })
 
 if ($('input[name="name"]').value !== '') {
 	$('input[name="name"]').siblings().css({
-			"font-size": "11px",
-			"font-weight": "700",
-			"top": "12px",
-		})
-	}
+		"font-size": "11px",
+		"font-weight": "700",
+		"top": "12px",
+	})
+}
 
 
-	//E-mail Ajax Send
+//E-mail Ajax Send
 $("#form1").submit(function () { //Change
 	var th = $(this);
 	$.ajax({
 		type: "POST",
 		url: "../controllers/mail.php", //Change
-		data: th.serialize()
+		data: th.serialize(),
+		beforeSend: function () {
+			$("#form1").css("display", "none");
+			$('#spanimg').html('<img id="imgcode" src="image/ajax-loader.gif">');
+			$("#spanimg").css("display", "block");
+		}
 	}).done(function () {
-		$("#form1").css("display", "none");
+		$("#spanimg").css("display", "none");
 		$(".succes-form").fadeIn("fast");
 		setTimeout(function () {
 			// Done Functions
 			th.trigger("reset");
 		}, 1000);
-	}).fail(function() {
-		$("#form1").fadeOut("fast");
+	}).fail(function () {
+		$("#spanimg").css("display", "none");
 		$(".succes-form.text").html("Ошибка отправки, повторите поздней");
 		$(".succes-form").fadeIn("fast");
-  });
+	});
 	return false;
 });
 
@@ -52,10 +57,12 @@ $("#form1").submit(function () { //Change
 
 
 
-jQuery(function($){
-	$('a[href^="#"]').click(function(){
+jQuery(function ($) {
+	$('a[href^="#"]').click(function () {
 		var target = $(this).attr('href');
-		$('html, body').animate({scrollTop: $(target).offset().top}, 1000);
+		$('html, body').animate({
+			scrollTop: $(target).offset().top
+		}, 1000);
 		return false;
 	});
 });
