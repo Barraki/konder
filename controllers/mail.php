@@ -6,7 +6,7 @@
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $token = "753483142:AAGpBM4EhOgqwIx6U32gzFrWqxDQl8yGtI4";
-$chat_id = "186462766";
+$chat_id = "-375764460";
 $arr = array(
   'Имя пользователя: ' => $name,
   'Телефон: ' => $phone,
@@ -18,9 +18,11 @@ foreach($arr as $key => $value) {
 
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
+$succes = "false";
+
 if ($sendToTelegram) {
-  header('Location: thank-you.html');
+  $succes = "true";
 } else {
-  echo "Error";
+  $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={Error request}","r");
 }
 ?>

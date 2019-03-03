@@ -484,7 +484,7 @@
 		<div class="popup open" id="popup">
 			<div class="popup__close js-popup-close"></div>
 			<div class="popup__loaded js-popup-loaded">
-				<form id="form1" action="controllers/mail.php" method="POST">
+				<form id="form1" method="POST">
 					<div class="popup__content-small text-center">
 						<h2 class="mt0">Обратный звонок</h2>
 						<p>Сообщите ваши контактные данные, и наш специалист свяжется с вами в течение 15 минут</p>
@@ -493,21 +493,24 @@
 							<div class="label__text">Имя</div>
 						</label>
 						<label class="label mt20">
-							<input class="input-phone" name="phone" type="tel" placeholder="+7 (___) ___ __-__" required>
+							<input class="input-phone" name="phone" type="tel" minlength="18" placeholder="+7 (___) ___ __-__" required>
 							<div class="label__text">Телефон</div>
 						</label>
 						<button class="button button--yellow button--large mt10 js-submit-btn" type="submit">Заказать звонок</button>
 					</div>
 				</form>
+				<p style="display: none" class="succes-form text">Спасибо за оставленную заявку, мы свяжемся с вами в ближайшее время</p>
+				<button style="margin: 0 auto;display: none;" class="button button--yellow succes-form js-popup-close" type="submit">Закрыть</button>
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="js/all.js"></script>
 	<script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
-	<script type="text/javascript" src="js/all.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 

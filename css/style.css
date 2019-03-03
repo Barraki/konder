@@ -227,6 +227,10 @@ select::-ms-expand {
 	margin-bottom: 40px
 }
 
+.succes-form.text {
+	text-align: center;
+}
+
 .style__info {
 	color: #1c2e36;
 	font-size: 14px;
@@ -3062,6 +3066,8 @@ img {
 	padding: 40px;
 	max-height: calc(100vh - 200px);
 	overflow-x: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 @media only screen and (max-width:975px) {
