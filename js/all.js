@@ -5112,7 +5112,7 @@
 				value: function () {
 					function t() {
 						var t = document.createElement("script");
-						t.type = "text/javascript", t.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD2vds89ocgEPMq9ZiNYy8ao9O_QsI-gcg&signed_in=true&callback=initializeMap", document.body.appendChild(t)
+						t.type = "text/javascript", t.src = "", document.body.appendChild(t)
 					}
 					var e = this;
 					if (!1 !== this.options.mobileShow || !o.mobile.matches) {
@@ -11182,16 +11182,3 @@
 }, function (t, e, n) {
 	n(214), n(127), n(213), t.exports = n(215)
 }]);
-
-
-
-$(document).ready(function () {
-	$("nav").on("click", "a", function (event) {
-		event.preventDefault();
-		var id = $(this).attr('href'),
-			top = $(id).offset().top - 100;
-		$('body,html').animate({
-			scrollTop: top
-		}, 1500);
-	});
-});

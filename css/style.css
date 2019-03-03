@@ -14,12 +14,6 @@
 	src: url(../fonts/LatoRegular/LatoRegular.woff)
 }
 
-@font-face {
-	font-family: Lato;
-	font-style: normal;
-	font-weight: 700;
-	src: url(/local/templates/future_2018_v1/style/dist/css/../fonts/Lato700.woff2)
-}
 
 @font-face {
 	font-family: Lato;
@@ -28,12 +22,6 @@
 	src: url(../fonts/LatoBold/LatoBold.woff)
 }
 
-@font-face {
-	font-family: Lato;
-	font-style: italic;
-	font-weight: 400;
-	src: url(../fonts/Lato400Italic.woff2) 
-}
 
 @font-face {
 	font-family: Lato;
@@ -3024,7 +3012,7 @@ img {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	transition: all .3s ease;
+
 }
 
 .popup-bg.open {
@@ -3036,7 +3024,8 @@ img {
 @media only screen and (max-width:975px) {
 	.popup-bg {
 		padding-left: 15px;
-		padding-right: 15px
+		padding-right: 15px;
+		padding-top: 0;
 	}
 }
 
@@ -3881,8 +3870,19 @@ table__tbody .table__tr:nth-child(2n),
 	border: none
 }
 
-/* End */
+@media screen and (max-width: 375px) {
+	.popup__loaded {
+		max-height: calc(100vh - 70px);
+	}
 
-/* /local/templates/future_2018_v1/style/dist/css/fonts.css?15253554961255 */
+	.popup__loaded h2 {
+		font-size: 25px;
+	}
 
-/* /local/templates/future_2018_v1/style/dist/css/all.css?152535549651511 */
+	.popup__loaded p {
+		font-size: 13px;
+	}
+	.popup__loaded .label {
+		margin-top: 10px;
+	}
+}
