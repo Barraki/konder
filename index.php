@@ -513,7 +513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</form>
 				<p style="display: none" class="succes-form text">Спасибо за оставленную заявку, мы свяжемся с вами в ближайшее время</p>
 				<button style="margin: 0 auto;display: none;" class="button button--yellow succes-form js-popup-close" type="submit">Закрыть</button>
-				<span id="spanimg" style="display: none"></span>
+				<span id="spanimg" style="display: none"><img id="imgcode" src="image/ajax-loader.gif"></span>
 			</div>
 		</div>
 	</div>

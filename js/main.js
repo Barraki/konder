@@ -35,7 +35,6 @@ $("#form1").submit(function () { //Change
 		data: th.serialize(),
 		beforeSend: function () {
 			$("#form1").css("display", "none");
-			$('#spanimg').html('<img id="imgcode" src="image/ajax-loader.gif">');
 			$("#spanimg").css("display", "block");
 		}
 	}).done(function () {
